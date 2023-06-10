@@ -45,7 +45,7 @@ const login = async (req, res, next) => {
     if (adminMaster) {
       userData = {
         id: adminMaster.id_admin_master,
-        password: accountOfficer.password_admin_master,
+        password: adminMaster.password_admin_master,
         role: 'ADMIN_MASTER',
         ...adminMaster.dataValues
       }
@@ -54,7 +54,7 @@ const login = async (req, res, next) => {
     if (anggota) {
       userData = {
         id: anggota.id_anggota,
-        password: accountOfficer.password_anggota,
+        password: anggota.password_anggota,
         role: "ANGGOTA",
         ...anggota.dataValues
       }
