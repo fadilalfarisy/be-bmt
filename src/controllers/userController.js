@@ -88,6 +88,9 @@ const login = async (req, res, next) => {
     //send refresh token as a cookie
     res.cookie("token", refreshToken, {
       expires: new Date(Date.now() + 1000 * 60 * 60 * 24), //1d
+      httpOnly: true,
+      secure: true,
+      sameSite: "none"
     });
 
     res.status(200).json({
